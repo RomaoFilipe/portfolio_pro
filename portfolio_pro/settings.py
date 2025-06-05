@@ -14,21 +14,22 @@ ALLOWED_HOSTS = env("ALLOWED_HOSTS").split(" ")
 
 # Applications
 INSTALLED_APPS = [
-    "django.contrib.admin",
-    "django.contrib.auth",
-    "django.contrib.contenttypes",
-    "django.contrib.sessions",
-    "django.contrib.messages",
-    "django.contrib.staticfiles",
-    "core",
-    "projects",
-    "contacts",
-    "export",
-    "rest_framework",
-    "crispy_forms",
-    "widget_tweaks",
-    "channels",
+    'app.core',
+    'app.projects',
+    'app.contacts',
+    'app.export',
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'rest_framework',
+    'crispy_forms',
+    'widget_tweaks',
+    'channels',
 ]
+
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",

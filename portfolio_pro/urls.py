@@ -5,12 +5,13 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path("cms/", admin.site.urls),
-    path("", include("core.urls")),
-    path("projects/", include("projects.urls")),
-    path("contact/", include("contacts.urls")),
-    path("export/", include("export.urls")),
-    path("api/", include("projects.api.urls")),
+    path("", include("app.core.urls")),
+    path("projects/", include("app.projects.urls")),
+    path("contact/", include("app.contacts.urls")),
+    path("export/", include("app.export.urls")),
+    path("api/", include("app.projects.api.urls")),
 ]
+
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
