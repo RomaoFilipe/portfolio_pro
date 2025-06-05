@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}{{ project.name }} - Portfolio Pro{% endblock %}
+
+{% block content %}
+<h1 class="text-3xl font-bold mb-6">{{ project.name }}</h1>
+
+<img src="{{ project.image.url }}" alt="{{ project.name }}" class="mb-6 rounded">
+
+<p class="mb-4">{{ project.description }}</p>
+
+<p class="mb-2">Technologies: {{ project.technologies }}</p>
+
+{% if project.repo_link %}
+    <p class="mb-2">Repo: <a href="{{ project.repo_link }}" class="text-blue-600" target="_blank">{{ project.repo_link }}</a></p>
+{% endif %}
+
+{% if project.live_link %}
+    <p class="mb-2">Live Site: <a href="{{ project.live_link }}" class="text-blue-600" target="_blank">{{ project.live_link }}</a></p>
+{% endif %}
+
+{% if project.model_3d %}
+    <p class="mb-2">3D Model: <a href="{{ project.model_3d.url }}" class="text-blue-600" target="_blank">Download</a></p>
+{% endif %}
+
+<a href="/projects/" class="inline-block mt-6 px-6 py-2 bg-gray-600 text-white rounded hover:bg-gray-700">Back to Projects</a>
+{% endblock %}
