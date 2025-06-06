@@ -28,5 +28,12 @@ services:
     ports:
       - "6379:6379"
 
+  node:
+    image: node:20-alpine
+    working_dir: /app
+    volumes:
+      - .:/app
+    command: sh -c "npm install && npx tailwindcss -i ./static/css/tailwind.css -o ./static/css/styles.css --watch"
+
 volumes:
   postgres_data:

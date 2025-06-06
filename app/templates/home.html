@@ -3,9 +3,38 @@
 {% block title %}Home - Portfolio Pro{% endblock %}
 
 {% block content %}
-<h1 class="text-3xl font-bold mb-6">Welcome to My Portfolio</h1>
+<div class="flex flex-col items-center justify-center min-h-screen text-center bg-gradient-to-b from-white to-blue-50 px-4">
 
-<p class="mb-4">Explore my projects across Programming, 3D, and Multimedia.</p>
+    <span class="inline-flex items-center px-4 py-1 mb-4 text-sm font-medium text-green-700 bg-green-100 rounded-full">
+        Disponível para novos projetos
+    </span>
 
-<a href="/projects/" class="inline-block px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">View Projects</a>
+    <h1 class="text-5xl md:text-6xl font-extrabold mb-4 text-gray-900 leading-tight">
+        Desenvolvedor <br>
+        <span class="text-indigo-500">Criativo</span>
+        <span class="text-gray-600">& Designer</span>
+    </h1>
+
+    <p class="max-w-xl mb-6 text-lg text-gray-600">
+        Crio experiências digitais excepcionais através de desenvolvimento web inovador, visualizações 3D impressionantes e design multimídia envolvente.
+    </p>
+
+    <div class="flex space-x-4">
+        <a href="/projects/" class="inline-flex items-center px-6 py-3 text-white bg-indigo-600 rounded-lg hover:bg-indigo-700 shadow-md transition">
+            Ver Meu Trabalho
+            <svg class="w-4 h-4 ml-2" fill="currentColor" viewBox="0 0 20 20"><path d="M12.293 9.293a1 1 0 011.414 0L17 12.586V11a1 1 0 112 0v5a1 1 0 01-1 1h-5a1 1 0 110-2h1.586l-3.293-3.293a1 1 0 010-1.414z"></path><path d="M3 5a2 2 0 012-2h6a2 2 0 012 2v4a1 1 0 11-2 0V5H5v10h6v-3a1 1 0 112 0v3a2 2 0 01-2 2H5a2 2 0 01-2-2V5z"></path></svg>
+        </a>
+
+        <a href="/contact/" class="inline-flex items-center px-6 py-3 text-gray-700 bg-gray-200 rounded-lg hover:bg-gray-300 shadow-md transition">
+            Entrar em Contato
+        </a>
+    </div>
+
+    <div class="mt-10 animate-bounce">
+        <svg class="w-6 h-6 mx-auto text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+        </svg>
+    </div>
+
+</div>
 {% endblock %}
