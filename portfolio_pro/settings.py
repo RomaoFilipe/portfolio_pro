@@ -4,10 +4,11 @@ import environ
 
 # Initialize environment variables
 env = environ.Env()
-environ.Env.read_env()
+env.read_env()  # <<< CORRETO AQUI!
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# Security settings
 SECRET_KEY = env("SECRET_KEY")
 DEBUG = env.bool("DEBUG", default=True)
 ALLOWED_HOSTS = env("ALLOWED_HOSTS").split(" ")
@@ -30,7 +31,7 @@ INSTALLED_APPS = [
     'channels',
 ]
 
-
+# Middleware
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
@@ -42,8 +43,10 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
+# URL config
 ROOT_URLCONF = "portfolio_pro.urls"
 
+# Templates
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
@@ -60,6 +63,7 @@ TEMPLATES = [
     },
 ]
 
+# WSGI and ASGI applications
 WSGI_APPLICATION = "portfolio_pro.wsgi.application"
 ASGI_APPLICATION = "portfolio_pro.asgi.application"
 
@@ -68,16 +72,16 @@ DATABASES = {
     "default": env.db(),
 }
 
-# Static files
+# Static files (CSS, JS, Images)
 STATIC_URL = "/static/"
 STATICFILES_DIRS = [BASE_DIR / "static"]
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
-# Media files
+# Media files (uploads)
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
 
-# Channels config (Redis will be configured)
+# Channels config (Redis backend)
 CHANNEL_LAYERS = {
     "default": {
         "BACKEND": "channels_redis.core.RedisChannelLayer",
